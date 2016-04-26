@@ -3,21 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | Hexo</title>
+  <title>FMDatabase的用法 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+  <meta name="description" content="在ios的开发中，我们有时需要对数据的缓存，存入本地。很常见的一种就是存入本地的数据库中，可以方便我们在本地的调用。
+这篇博客就简述我们常用的第三方库FMDB的使用。
+首先我们应该去下载，此类库，下载地址：http://download.csdn.net/detail/pearlhuzhu/5483999 下载直接拖入工程文件
+其实，对于这个库文件，我们只是需要操作FMDatabase就能搞定对数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2016/04/25/hello-world/index.html">
+<meta property="og:title" content="FMDatabase的用法">
+<meta property="og:url" content="http://yoursite.com/2016/04/25/数据库/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-04-25T11:39:40.000Z">
+<meta property="og:description" content="在ios的开发中，我们有时需要对数据的缓存，存入本地。很常见的一种就是存入本地的数据库中，可以方便我们在本地的调用。
+这篇博客就简述我们常用的第三方库FMDB的使用。
+首先我们应该去下载，此类库，下载地址：http://download.csdn.net/detail/pearlhuzhu/5483999 下载直接拖入工程文件
+其实，对于这个库文件，我们只是需要操作FMDatabase就能搞定对数">
+<meta property="og:updated_time" content="2016-04-26T06:39:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="FMDatabase的用法">
+<meta name="twitter:description" content="在ios的开发中，我们有时需要对数据的缓存，存入本地。很常见的一种就是存入本地的数据库中，可以方便我们在本地的调用。
+这篇博客就简述我们常用的第三方库FMDB的使用。
+首先我们应该去下载，此类库，下载地址：http://download.csdn.net/detail/pearlhuzhu/5483999 下载直接拖入工程文件
+其实，对于这个库文件，我们只是需要操作FMDatabase就能搞定对数">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -66,9 +72,9 @@ Quick">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-数据库" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/04/25/hello-world/" class="article-date">
+    <a href="/2016/04/25/数据库/" class="article-date">
   <time datetime="2016-04-25T10:25:26.000Z" itemprop="datePublished">2016-04-25</time>
 </a>
     
@@ -80,7 +86,7 @@ Quick">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      FMDatabase的用法
     </h1>
   
 
@@ -88,20 +94,47 @@ Quick">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>在ios的开发中，我们有时需要对数据的缓存，存入本地。很常见的一种就是存入本地的数据库中，可以方便我们在本地的调用。</p>
+<p>这篇博客就简述我们常用的第三方库FMDB的使用。</p>
+<p>首先我们应该去下载，此类库，下载地址：<a href="http://download.csdn.net/detail/pearlhuzhu/5483999" target="_blank" rel="external">http://download.csdn.net/detail/pearlhuzhu/5483999</a> 下载直接拖入工程文件</p>
+<p>其实，对于这个库文件，我们只是需要操作FMDatabase就能搞定对数据库的查询，更新等。所以我们只是需要导入头文件：#import “FMDatabase.h”</p>
+<p>在这个文件中，我们能看见：</p>
+<ul>
+<li>(id)databaseWithPath:(NSString*)aPath</li>
+</ul>
+<p>在对FMDatabase实例化的时候，初始化。</p>
+<p>想要对数据库的操作，首先应该，打开数据库。</p>
+<ul>
+<li>(BOOL)open;</li>
+</ul>
+<p>查询，参数sql语句：</p>
+<ul>
+<li>(FMResultSet <em>)executeQuery:(NSString</em>)sql, …;</li>
+<li>(FMResultSet <em>)executeQueryWithFormat:(NSString</em>)format, …;</li>
+<li>(FMResultSet <em>)executeQuery:(NSString </em>)sql withArgumentsInArray:(NSArray *)arguments;</li>
+<li>(FMResultSet <em>)executeQuery:(NSString </em>)sql withParameterDictionary:(NSDictionary *)arguments;</li>
+</ul>
+<p>更新操作：</p>
+<ul>
+<li>(BOOL)update:(NSString<em>)sql withErrorAndBindings:(NSError*</em>)outErr, …;</li>
+<li>(BOOL)executeUpdate:(NSString*)sql, …;</li>
+<li>(BOOL)executeUpdateWithFormat:(NSString *)format, …;</li>
+<li>(BOOL)executeUpdate:(NSString<em>)sql withArgumentsInArray:(NSArray </em>)arguments;</li>
+<li>(BOOL)executeUpdate:(NSString<em>)sql withParameterDictionary:(NSDictionary </em>)arguments;</li>
+</ul>
+<p>提交：</p>
+<ul>
+<li>(BOOL)commit;</li>
+</ul>
+<p>操作完后：</p>
+<ul>
+<li>(void)close;</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/25/hello-world/" data-id="cinh418l500004olgeypbipj5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/25/数据库/" data-id="cinh418lh00034olgspwbne1f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -110,20 +143,15 @@ Quick">
     
 <nav id="article-nav">
   
-    <a href="/2016/04/26/数据库的操作/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/04/25/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          数据库的操作
+          Hello World
         
       </div>
     </a>
   
-  
-    <a href="/2016/04/25/数据库/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">FMDatabase的用法</div>
-    </a>
   
 </nav>
 

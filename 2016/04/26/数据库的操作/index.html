@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>数据库的操作 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在ios的开发中，我们有时需要对数据的缓存，存入本地。很常见的一种就是存入本地的数据库中，可以方便我们在本地的调用。
+这篇博客就简述我们常用的第三方库FMDB的使用。
+首先我们应该去下载，此类库，下载地址：http://download.csdn.net/detail/pearlhuzhu/5483999 下载直接拖入工程文件
+其实，对于这个库文件，我们只是需要操作FMDatabase就能搞定对数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库的操作">
+<meta property="og:url" content="http://yoursite.com/2016/04/26/数据库的操作/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="在ios的开发中，我们有时需要对数据的缓存，存入本地。很常见的一种就是存入本地的数据库中，可以方便我们在本地的调用。
+这篇博客就简述我们常用的第三方库FMDB的使用。
+首先我们应该去下载，此类库，下载地址：http://download.csdn.net/detail/pearlhuzhu/5483999 下载直接拖入工程文件
+其实，对于这个库文件，我们只是需要操作FMDatabase就能搞定对数">
+<meta property="og:updated_time" content="2016-04-26T06:51:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据库的操作">
+<meta name="twitter:description" content="在ios的开发中，我们有时需要对数据的缓存，存入本地。很常见的一种就是存入本地的数据库中，可以方便我们在本地的调用。
+这篇博客就简述我们常用的第三方库FMDB的使用。
+首先我们应该去下载，此类库，下载地址：http://download.csdn.net/detail/pearlhuzhu/5483999 下载直接拖入工程文件
+其实，对于这个库文件，我们只是需要操作FMDatabase就能搞定对数">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-数据库的操作" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/26/数据库的操作/" class="article-date">
+  <time datetime="2016-04-26T06:50:26.000Z" itemprop="datePublished">2016-04-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据库的操作
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在ios的开发中，我们有时需要对数据的缓存，存入本地。很常见的一种就是存入本地的数据库中，可以方便我们在本地的调用。</p>
+<p>这篇博客就简述我们常用的第三方库FMDB的使用。</p>
+<p>首先我们应该去下载，此类库，下载地址：<a href="http://download.csdn.net/detail/pearlhuzhu/5483999" target="_blank" rel="external">http://download.csdn.net/detail/pearlhuzhu/5483999</a> 下载直接拖入工程文件</p>
+<p>其实，对于这个库文件，我们只是需要操作FMDatabase就能搞定对数据库的查询，更新等。所以我们只是需要导入头文件：#import “FMDatabase.h”</p>
+<p>在这个文件中，我们能看见：</p>
+<ul>
+<li>(id)databaseWithPath:(NSString*)aPath</li>
+</ul>
+<p>在对FMDatabase实例化的时候，初始化。</p>
+<p>想要对数据库的操作，首先应该，打开数据库。</p>
+<ul>
+<li>(BOOL)open;</li>
+</ul>
+<p>查询，参数sql语句：</p>
+<ul>
+<li>(FMResultSet <em>)executeQuery:(NSString</em>)sql, …;</li>
+<li>(FMResultSet <em>)executeQueryWithFormat:(NSString</em>)format, …;</li>
+<li>(FMResultSet <em>)executeQuery:(NSString </em>)sql withArgumentsInArray:(NSArray *)arguments;</li>
+<li>(FMResultSet <em>)executeQuery:(NSString </em>)sql withParameterDictionary:(NSDictionary *)arguments;</li>
+</ul>
+<p>更新操作：</p>
+<ul>
+<li>(BOOL)update:(NSString<em>)sql withErrorAndBindings:(NSError*</em>)outErr, …;</li>
+<li>(BOOL)executeUpdate:(NSString*)sql, …;</li>
+<li>(BOOL)executeUpdateWithFormat:(NSString *)format, …;</li>
+<li>(BOOL)executeUpdate:(NSString<em>)sql withArgumentsInArray:(NSArray </em>)arguments;</li>
+<li>(BOOL)executeUpdate:(NSString<em>)sql withParameterDictionary:(NSDictionary </em>)arguments;</li>
+</ul>
+<p>提交：</p>
+<ul>
+<li>(BOOL)commit;</li>
+</ul>
+<p>操作完后：</p>
+<ul>
+<li>(void)close;</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/26/数据库的操作/" data-id="cinh418li00044olgnnx0wdq0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/26/博客名字/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          博客名字
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/25/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/04/26/博客名111字/">博客名111字</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/26/博客名字/">博客名字</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/26/数据库的操作/">数据库的操作</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/25/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/25/数据库/">FMDatabase的用法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

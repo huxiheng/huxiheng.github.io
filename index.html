@@ -53,7 +53,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -63,6 +63,150 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-博客名111字" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/26/博客名111字/" class="article-date">
+  <time datetime="2016-04-26T07:18:18.000Z" itemprop="datePublished">2016-04-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/26/博客名111字/">博客名111字</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/26/博客名111字/" data-id="cinh418lc00014olgaemoxu20" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-博客名字" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/26/博客名字/" class="article-date">
+  <time datetime="2016-04-26T07:07:55.000Z" itemprop="datePublished">2016-04-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/26/博客名字/">博客名字</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/26/博客名字/" data-id="cinh418lf00024olgklt24t4w" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-数据库的操作" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/26/数据库的操作/" class="article-date">
+  <time datetime="2016-04-26T06:50:26.000Z" itemprop="datePublished">2016-04-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/26/数据库的操作/">数据库的操作</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在ios的开发中，我们有时需要对数据的缓存，存入本地。很常见的一种就是存入本地的数据库中，可以方便我们在本地的调用。</p>
+<p>这篇博客就简述我们常用的第三方库FMDB的使用。</p>
+<p>首先我们应该去下载，此类库，下载地址：<a href="http://download.csdn.net/detail/pearlhuzhu/5483999" target="_blank" rel="external">http://download.csdn.net/detail/pearlhuzhu/5483999</a> 下载直接拖入工程文件</p>
+<p>其实，对于这个库文件，我们只是需要操作FMDatabase就能搞定对数据库的查询，更新等。所以我们只是需要导入头文件：#import “FMDatabase.h”</p>
+<p>在这个文件中，我们能看见：</p>
+<ul>
+<li>(id)databaseWithPath:(NSString*)aPath</li>
+</ul>
+<p>在对FMDatabase实例化的时候，初始化。</p>
+<p>想要对数据库的操作，首先应该，打开数据库。</p>
+<ul>
+<li>(BOOL)open;</li>
+</ul>
+<p>查询，参数sql语句：</p>
+<ul>
+<li>(FMResultSet <em>)executeQuery:(NSString</em>)sql, …;</li>
+<li>(FMResultSet <em>)executeQueryWithFormat:(NSString</em>)format, …;</li>
+<li>(FMResultSet <em>)executeQuery:(NSString </em>)sql withArgumentsInArray:(NSArray *)arguments;</li>
+<li>(FMResultSet <em>)executeQuery:(NSString </em>)sql withParameterDictionary:(NSDictionary *)arguments;</li>
+</ul>
+<p>更新操作：</p>
+<ul>
+<li>(BOOL)update:(NSString<em>)sql withErrorAndBindings:(NSError*</em>)outErr, …;</li>
+<li>(BOOL)executeUpdate:(NSString*)sql, …;</li>
+<li>(BOOL)executeUpdateWithFormat:(NSString *)format, …;</li>
+<li>(BOOL)executeUpdate:(NSString<em>)sql withArgumentsInArray:(NSArray </em>)arguments;</li>
+<li>(BOOL)executeUpdate:(NSString<em>)sql withParameterDictionary:(NSDictionary </em>)arguments;</li>
+</ul>
+<p>提交：</p>
+<ul>
+<li>(BOOL)commit;</li>
+</ul>
+<p>操作完后：</p>
+<ul>
+<li>(void)close;</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/26/数据库的操作/" data-id="cinh418li00044olgnnx0wdq0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -99,7 +243,79 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/25/hello-world/" data-id="cinfv2f1q0000rglgvf6m3pse" class="article-share-link">Delen</a>
+      <a data-url="http://yoursite.com/2016/04/25/hello-world/" data-id="cinh418l500004olgeypbipj5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-数据库" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/25/数据库/" class="article-date">
+  <time datetime="2016-04-25T10:25:26.000Z" itemprop="datePublished">2016-04-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/25/数据库/">FMDatabase的用法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在ios的开发中，我们有时需要对数据的缓存，存入本地。很常见的一种就是存入本地的数据库中，可以方便我们在本地的调用。</p>
+<p>这篇博客就简述我们常用的第三方库FMDB的使用。</p>
+<p>首先我们应该去下载，此类库，下载地址：<a href="http://download.csdn.net/detail/pearlhuzhu/5483999" target="_blank" rel="external">http://download.csdn.net/detail/pearlhuzhu/5483999</a> 下载直接拖入工程文件</p>
+<p>其实，对于这个库文件，我们只是需要操作FMDatabase就能搞定对数据库的查询，更新等。所以我们只是需要导入头文件：#import “FMDatabase.h”</p>
+<p>在这个文件中，我们能看见：</p>
+<ul>
+<li>(id)databaseWithPath:(NSString*)aPath</li>
+</ul>
+<p>在对FMDatabase实例化的时候，初始化。</p>
+<p>想要对数据库的操作，首先应该，打开数据库。</p>
+<ul>
+<li>(BOOL)open;</li>
+</ul>
+<p>查询，参数sql语句：</p>
+<ul>
+<li>(FMResultSet <em>)executeQuery:(NSString</em>)sql, …;</li>
+<li>(FMResultSet <em>)executeQueryWithFormat:(NSString</em>)format, …;</li>
+<li>(FMResultSet <em>)executeQuery:(NSString </em>)sql withArgumentsInArray:(NSArray *)arguments;</li>
+<li>(FMResultSet <em>)executeQuery:(NSString </em>)sql withParameterDictionary:(NSDictionary *)arguments;</li>
+</ul>
+<p>更新操作：</p>
+<ul>
+<li>(BOOL)update:(NSString<em>)sql withErrorAndBindings:(NSError*</em>)outErr, …;</li>
+<li>(BOOL)executeUpdate:(NSString*)sql, …;</li>
+<li>(BOOL)executeUpdateWithFormat:(NSString *)format, …;</li>
+<li>(BOOL)executeUpdate:(NSString<em>)sql withArgumentsInArray:(NSArray </em>)arguments;</li>
+<li>(BOOL)executeUpdate:(NSString<em>)sql withParameterDictionary:(NSDictionary </em>)arguments;</li>
+</ul>
+<p>提交：</p>
+<ul>
+<li>(BOOL)commit;</li>
+</ul>
+<p>操作完后：</p>
+<ul>
+<li>(void)close;</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/25/数据库/" data-id="cinh418lh00034olgspwbne1f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -124,7 +340,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archieven</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li></ul>
     </div>
@@ -134,12 +350,28 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recente berichten</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
           <li>
+            <a href="/2016/04/26/博客名111字/">博客名111字</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/26/博客名字/">博客名字</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/26/数据库的操作/">数据库的操作</a>
+          </li>
+        
+          <li>
             <a href="/2016/04/25/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/25/数据库/">FMDatabase的用法</a>
           </li>
         
       </ul>
